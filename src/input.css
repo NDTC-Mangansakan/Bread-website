@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: oklch(70.5% 0.213 47.604);
+}
+
+html{
+    scroll-padding-top: 10vh;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+}
+
+.custom-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media(width >=425px) {
+        max-width: 425px;
+    }
+
+    @media (width >=640px) {
+        max-width: 600px;
+    }
+
+    @media (width >=768px) {
+        max-width: 720px;
+    }
+
+    @media (width >=1024px) {
+        max-width: 960px;
+    }
+
+    @media (width >=1280px) {
+        max-width: 1180px;
+    }
+
+    @media (width >=1536) {
+        max-width: 1400px;
+    }
+
+}
+
+@utility btn{
+    @apply px-5 py-3 font-semibold bg-primary mt-10;
+}
+
+@utility section-title{
+    @apply text-4xl font-extrabold text-white text-center;
+}
+
+.hover-transition{
+    @apply text-white transition-colors duration-300 hover:text-primary;
+}
+
+@layer base{
+    nav{
+        @apply h-[10vh] backdrop-blur-sm  bg-transparent flex items-center fixed top-0 left-0 right-0 z-99;
+    }
+}
+
+/*navbar*/
+
+.nav-links-container{
+    @apply text-white font-semibold flex gap-x-10;
+}
+
+.nav-links-container a{
+    @apply hidden transition-colors duration-300 hover:text-primary lg:block;
+}
+
+/*Home*/
+
+#home{
+    background-image: url('assets/img/home-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 10vh;
+}
+
+/*Favourites*/
+
+.favourites-card{
+    @apply transition-all duration-300 hover:border hover:border-primary;
+}
+
+#contact{
+    height: 50vh;
+    background-image: url('assets/img/visit-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 40px 0;
+    position: relative;
+}
